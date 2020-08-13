@@ -51,27 +51,23 @@
 
 <div class="container-fluid my-5 py-3">
     <div class="row">
-        <div class="col-12 col-md-6 arrow my-5 d-flex justify-content-center align-itens-center flex-column">
+        <div class="col-12 col-md-6 arrow mt-5 mb-5 d-flex justify-content-center align-itens-center flex-column">
             <h3 class="text-right text-white mr-5 pr-5">Hotel</h3>
         </div>
-        <div class="col-12 col-md-6 mt-5 pt-4">
-            <a href="" class="mt-5 pt-5 ml-5 pl-3 h3 textHover">Vai all'elenco</a>
+        <div class="col-12 col-md-6 d-flex justify-content-center align-itens-center flex-column mt-5">
+            <a href="" class="h3 arrow2 textHover text-center pt-4">Vai all'elenco</a>
         </div>
         <div class="col-12 col-md-6 arrow mb-5 d-flex justify-content-center align-itens-center flex-column">
             <h3 class="text-right text-white mr-5 pr-5">Ristoranti</h3>
         </div>
-        <div class="col-12 col-md-6">
-            <div class="col-12 col-md-6 mt-4">
-                <a href="" class=" h3 mt-5 ml-5 textHover">Vai all'elenco</a>
-            </div>
+        <div class="col-12 col-md-6 d-flex justify-content-center align-itens-center flex-column mt-3">
+                <a href="" class=" h3  textHover arrow2 text-center pt-4">Vai all'elenco</a>
         </div>
         <div class="col-12 col-md-6 arrow mb-5 d-flex justify-content-center align-itens-center flex-column">
             <h3 class="text-right text-white mr-5 pr-5">Palestre</h3>
         </div>
-        <div class="col-12 col-md-6">
-            <div class="col-12 col-md-6 mt-4">
-                <a href="" class=" h3 mt-5 ml-5 textHover">Vai all'elenco</a>
-            </div>
+        <div class="col-12 col-md-6 d-flex justify-content-center align-itens-center flex-column mt-3">
+           <a href="" class=" h3  textHover arrow2 text-center pt-4">Vai all'elenco</a>
         </div>
     </div>
 </div>

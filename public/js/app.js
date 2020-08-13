@@ -37322,7 +37322,10 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-
+var contact = document.querySelector('#contact');
+contact.addEventListener('click', function () {
+  window.scrollBy(0, 1500);
+});
 
 /***/ }),
 

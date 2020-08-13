@@ -18,6 +18,9 @@
                 <!-- Authentication Links -->
                 @guest
                     <li class="nav-item">
+                        <button id="contact" class="btn btn-custom mt-1 mr-3">Contattaci</button>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link text-white" href="{{ route('login') }}">{{ __('Login') }}</a>
                     </li>
                     @if (Route::has('register'))

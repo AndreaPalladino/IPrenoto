@@ -10904,6 +10904,10 @@ a.text-dark:focus {
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .masthead {
   height: 80vh;
   min-height: 500px;
@@ -10942,11 +10946,47 @@ a.text-dark:focus {
           clip-path: polygon(80% 0, 100% 50%, 80% 100%, 0 100%, 0 0);
 }
 
+.arrow2 {
+  height: 80px;
+  background-color: gray;
+  -webkit-clip-path: polygon(20% 0, 100% 0, 100% 100%, 20% 100%, 0 50%);
+          clip-path: polygon(20% 0, 100% 0, 100% 100%, 20% 100%, 0 50%);
+}
+
+.bg10 {
+  background-color: var(--dieci);
+}
+
 .textHover {
   color: black;
 }
 
 .textHover:hover {
   color: var(--dieci) !important;
+}
+
+.btn-custom {
+  background-color: var(--trenta) !important;
+  color: var(--dieci) !important;
+}
+
+.foot {
+  height: 60vh;
+  background: linear-gradient(120deg, var(--trenta) 25%, gray);
+  /*  clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 0 100%, 0 0, 50% 25%); */
+}
+
+.hrFoot {
+  width: 1px;
+  height: 30px;
+  background-color: var(--dieci);
+}
+
+.inputborder {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 2px solid var(--dieci);
+  width: 500px;
 }
 
