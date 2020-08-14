@@ -37,41 +37,54 @@
     </div>
 </div>
 
-<div class="container my-3 py-3">
+<div class="container-fluid mt-3 pt-3 who">
     <div class="row justify-content-center">
         <div class="col-12">
-            <h3 class="text-center">Chi Siamo</h3>
+            <h3 class="text-right text-white mt-5 mr-5 ">Chi Siamo</h3>
             <hr>
-            <p class="text-justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam vitae dignissimos non beatae nemo illum, aliquid reiciendis. Facere ipsam sequi tenetur atque in, totam corrupti necessitatibus molestiae minus eaque voluptas.</p>
-            <p class="text-justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam vitae dignissimos non beatae nemo illum, aliquid reiciendis. Facere ipsam sequi tenetur atque in, totam corrupti necessitatibus molestiae minus eaque voluptas.</p>
-            <p class="text-justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam vitae dignissimos non beatae nemo illum, aliquid reiciendis. Facere ipsam sequi tenetur atque in, totam corrupti necessitatibus molestiae minus eaque voluptas.</p>
+            <p class="text-right text-white">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam vitae dignissimos non beatae nemo illum, aliquid reiciendis.</p>
+            <p class="text-right text-white">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam vitae dignissimos non beatae nemo illum, aliquid reiciendis.</p>
+            <p class="text-right text-white">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam vitae dignissimos non beatae nemo illum, aliquid reiciendis.</p>
+            <p class="text-right text-white">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam vitae dignissimos non beatae nemo illum, aliquid reiciendis.</p>
+            <p class="text-right text-white">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam vitae dignissimos non beatae nemo illum, aliquid reiciendis.</p>
         </div>
     </div>
 </div>
 
-<div class="container-fluid my-5 py-3">
-    <div class="row">
-        <div class="col-12 col-md-6 arrow mt-5 mb-5 d-flex justify-content-center align-itens-center flex-column">
-            <h3 class="text-right text-white mr-5 pr-5">Hotel</h3>
+<div class="container-fluid mb-5 pb-3">
+    <div class="row mt-5 pt-5">
+        <div class="col-12 arrow  d-flex justify-content-center align-itens-center flex-column my-2" data-aos="fade-right" data-aos-duration="3000">
+            <h3 class="text-center text-white ">Hotel</h3>
         </div>
-        <div class="col-12 col-md-6 d-flex justify-content-center align-itens-center flex-column mt-5">
+        <div class="col-12  d-flex justify-content-center align-itens-center flex-column my-2" data-aos="fade-left" data-aos-duration="3000">
             <a href="" class="h3 arrow2 textHover text-center pt-4">Vai all'elenco</a>
         </div>
-        <div class="col-12 col-md-6 arrow mb-5 d-flex justify-content-center align-itens-center flex-column">
-            <h3 class="text-right text-white mr-5 pr-5">Ristoranti</h3>
+        <div class="col-12  arrow  d-flex justify-content-center align-itens-center flex-column my-2" data-aos="fade-right" data-aos-duration="3000">
+            <h3 class="text-center text-white ">Ristoranti</h3>
         </div>
-        <div class="col-12 col-md-6 d-flex justify-content-center align-itens-center flex-column mt-3">
+        <div class="col-12  d-flex justify-content-center align-itens-center flex-column my-2" data-aos="fade-left" data-aos-duration="3000">
                 <a href="" class=" h3  textHover arrow2 text-center pt-4">Vai all'elenco</a>
         </div>
-        <div class="col-12 col-md-6 arrow mb-5 d-flex justify-content-center align-itens-center flex-column">
-            <h3 class="text-right text-white mr-5 pr-5">Palestre</h3>
+        <div class="col-12  arrow  d-flex justify-content-center align-itens-center flex-column my-2" data-aos="fade-right" data-aos-duration="3000">
+            <h3 class="text-center text-white ">Palestre</h3>
         </div>
-        <div class="col-12 col-md-6 d-flex justify-content-center align-itens-center flex-column mt-3">
+        <div class="col-12  d-flex justify-content-center align-itens-center flex-column my-2" data-aos="fade-left" data-aos-duration="3000">
            <a href="" class=" h3  textHover arrow2 text-center pt-4">Vai all'elenco</a>
         </div>
     </div>
 </div>
 
+<div class="container-fluid mt-5 pt-5 mobile">
+    <div class="row">
+        <div class="col-12 d-flex flex-column justify-content-center align-items-center">
+            <h3 class="text-center text-white">Provalo da <span class="h3 text10">mobile</span></h3>
+            <div class="d-flex justify-content-center align-items-center">
+            <a href="" class="mx-auto"><img src="/media/google-play-badge.png" alt="" height="55px"></a>
+            <a href="" class="mx-auto "><img src="/media/appstore.png" alt="" height="40px"></a>  
+            </div>
+        </div>
+    </div>
+</div>
 
 
 

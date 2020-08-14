@@ -14,20 +14,38 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @yield('style')
 </head>
 <body>
+
+  @if(Route::currentRouteName()!= 'homepage')
     
       @include('component.navbar')
         
       @yield('content')
-       
+  
+  
+  @else
+
+      @include('component.navbar')
+        
+      @yield('content')
+
       @include('component.footer')
+  
+  @endif
+
     @stack('script')
      <!-- Scripts -->
+     <script src="https://kit.fontawesome.com/5f18af2e46.js" crossorigin="anonymous"></script>
      <script src="{{ asset('js/app.js') }}"></script>
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+     <script>
+      AOS.init();
+    </script>
 </body>
 </html>

@@ -23,3 +23,4 @@ Route::get('/', 'PublicController@index')->name('homepage');
 
 /* UTENTI LOGGATI */
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/prenota', 'HomeController@prenota')->name('prenota');

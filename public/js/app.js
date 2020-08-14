@@ -37324,7 +37324,16 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 var contact = document.querySelector('#contact');
 contact.addEventListener('click', function () {
-  window.scrollBy(0, 1500);
+  window.scrollBy(0, 3000);
+});
+document.addEventListener('scroll', function () {
+  var nav = document.querySelector('#nav');
+
+  if (window.scrollY > 290) {
+    nav.classList.add("bg30");
+  } else {
+    nav.classList.remove("bg30");
+  }
 });
 
 /***/ }),
