@@ -36,7 +36,12 @@
         </div>
     </div>
 </div>
-
+@if (session('booking.confirmation'))
+    <div class="alert alert-success text-center">
+        <h5>Prenotazione avvenuta con successo</h5>
+    </div>
+    
+@endif
 <div class="container-fluid mt-3 pt-3 who">
     <div class="row justify-content-center">
         <div class="col-12">

@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use App\Type;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 class CreateTypesTable extends Migration
 {
@@ -15,8 +16,17 @@ class CreateTypesTable extends Migration
     {
         Schema::create('types', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->timestamps();
         });
+
+        $types = ['Hotel','Palestra','Ristorante'];
+
+       foreach($types as $type){
+           $t = new Type();
+           $t->name=$type;
+           $t->save();
+       }
     }
 
     /**

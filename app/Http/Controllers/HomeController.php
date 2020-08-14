@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Gym;
-use App\Hotel;
-use App\Restaurant;
+
+use App\Booking;
+use App\Location;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -30,10 +31,25 @@ class HomeController extends Controller
     }
     public function prenota()
     {
-        $gyms = Gym::all();
-        $restaurants = Restaurant::all();
-        $hotels = Hotel::all();
+        $locations = Location::all();
 
-        return view('prenota', compact('gyms','hotels','restaurants'));
+        return view('prenota', compact('locations'));
+    }
+
+
+    public function bookingStore(Request $request){
+
+        $b = new Booking();
+        $user = Auth::user();
+        $b->name=$request->input('name');
+        $b->email=$request->input('email');
+        $b->location=$request->input('location');
+        $b->number=$request->input('number');
+        $b->user_id=$user->id;
+
+        $b->save();
+
+        
+        return redirect('/')->with('booking.confirmation','confirm');
     }
 }
