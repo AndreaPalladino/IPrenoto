@@ -1,7 +1,7 @@
 <nav id="nav" class="navbar navbar-expand-md navbar-light fixed-top">
     <div class="container">
         <a class="navbar-brand text-white" href="{{ url('/') }}">
-            {{ config('app.name', 'Laravel') }}
+            <h4 class="font-weight-light text10">I<span class="h4 text-white">Prenoto</span></h4>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
@@ -19,7 +19,7 @@
                     <button id="contact" class="btn btn-custom  mr-3">Contattaci</button>
                 </li>
                 <li class="nav-item">
-                    <a href=""><i class="fas fa-plus text10 fa-2x mr-3"></i></a>
+                <a href="{{route('manager.create')}}"><i class="fas fa-plus text10 fa-2x mr-3"></i></a>
                 </li>
                 <li class="nav-item">
                 <a href="{{route('prenota')}}"><i class="fab fa-product-hunt text10 fa-2x"></i><span class="h5 text-white mr-3">renota</span></a>

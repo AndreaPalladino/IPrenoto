@@ -10986,6 +10986,14 @@ html {
   width: 500px;
 }
 
+.inputborder2 {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 2px solid var(--trenta);
+  width: 500px;
+}
+
 .contactForm {
   height: 400px;
   width: 600px;
@@ -11045,10 +11053,31 @@ html {
   background-color: var(--trenta);
 }
 
+.spazio {
+  height: 5vh;
+  background-color: var(--trenta);
+}
+
 .bookForm {
   height: 70vh;
   width: 600px;
   background-color: rgba(128, 128, 128, 0.507);
   transition: 0.5;
+}
+
+.sfondo {
+  background-color: var(--trenta);
+}
+
+.card-signin {
+  border: 0;
+  height: 600px;
+  width: 800px;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.border-custom {
+  border: 1px solid var(--trenta);
 }
 

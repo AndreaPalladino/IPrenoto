@@ -42,6 +42,13 @@
     </div>
     
 @endif
+@if (session('manager.access.denied'))
+    <div class="alert alert-danger text-center">
+      <h5>Acesso consentito solo ai gestori di Attività</h5>
+
+    </div>
+    
+@endif
 <div class="container-fluid mt-3 pt-3 who">
     <div class="row justify-content-center">
         <div class="col-12">

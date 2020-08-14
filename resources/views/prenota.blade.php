@@ -4,6 +4,7 @@
 @endsection
 @section('content')
 
+<div class="spazio"></div>
 <section class="booking">
 
 <div class="container">
@@ -50,7 +51,30 @@
     </div>
 </div>
 
-
+<div class="container my-5 py-5">
+  <div class="row">
+    <div class="col-12 col-md-6">
+        @foreach($locations as $location)
+        <div class="card border-custom mb-3" style="max-width: 540px;">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img src="http://placehold.it/300x350" class="card-img" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">{{$location->name}}<small class="text-muted float-right"> {{$location->type->name}}</small></h5>
+                
+                <p class="card-text">{{$location->description}}</p>
+                <p class="card-text"><small class="text-muted">{{$location->location}}</small></p>
+                <a href="#" class="btn btn-custom mx-auto d-block">Info</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        @endforeach
+    </div>
+  </div>
+</div>
 
 
 </section>
