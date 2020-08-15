@@ -31,9 +31,12 @@ class HomeController extends Controller
     }
     public function prenota()
     {
-        $locations = Location::all();
+        $locations_1 = Location::where('type_id','=','2')->paginate(8);
+        $locations_2 = Location::where('type_id','=','1')->paginate(8);
+        $locations_3 = Location::where('type_id','=','3')->paginate(8);
 
-        return view('prenota', compact('locations'));
+
+        return view('prenota', compact('locations_1', 'locations_2', 'locations_3'));
     }
 
 

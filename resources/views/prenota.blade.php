@@ -53,26 +53,97 @@
 
 <div class="container my-5 py-5">
   <div class="row">
-    <div class="col-12 col-md-6">
-        @foreach($locations as $location)
-        <div class="card border-custom mb-3" style="max-width: 540px;">
-          <div class="row no-gutters">
-            <div class="col-md-4">
-              <img src="http://placehold.it/300x350" class="card-img" alt="...">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">{{$location->name}}<small class="text-muted float-right"> {{$location->type->name}}</small></h5>
-                
-                <p class="card-text">{{$location->description}}</p>
-                <p class="card-text"><small class="text-muted">{{$location->location}}</small></p>
-                <a href="#" class="btn btn-custom mx-auto d-block">Info</a>
+    
+
+      <div class="row mx-auto">
+        <div class="col-3">
+          <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Palestre</a>
+            <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Hotel</a>
+            <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Ristoranti</a>
+          </div>
+        </div>
+        <div class="col-9">
+          <div class="tab-content" id="v-pills-tabContent">
+            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+             {{--  @if ($locations->type == 2) --}}
+              @foreach($locations_1 as $location)
+              <div class="card border-custom mb-3" style="max-width: 560px;">
+                <div class="row no-gutters">
+                  <div class="col-md-4">
+                    <img src="http://placehold.it/300x500" class="card-img" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">{{$location->name}}<small class="text-muted float-right"> {{$location->type->name}}</small></h5>
+                      
+                      <p class="card-text">{{$location->description}}</p>
+                      <p class="card-text"><small class="text-muted">{{$location->location}}</small></p>
+                      <a href="#" class="btn btn-custom mx-auto d-block">Info</a>
+                    </div>
+                  </div>
+                </div>
               </div>
+              @endforeach
+              {{-- @endif --}}
+            </div>
+            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+              @foreach($locations_2 as $location)
+              <div class="card border-custom mb-3" style="max-width: 560px;">
+                <div class="row no-gutters">
+                  <div class="col-md-4">
+                    <img src="http://placehold.it/300x500" class="card-img" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">{{$location->name}}<small class="text-muted float-right"> {{$location->type->name}}</small></h5>
+                      
+                      <p class="card-text">{{$location->description}}</p>
+                      <p class="card-text"><small class="text-muted">{{$location->location}}</small></p>
+                      <a href="#" class="btn btn-custom mx-auto d-block">Info</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              @endforeach
+            </div>
+            <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+              @foreach($locations_3 as $location)
+              <div class="card border-custom mb-3" style="max-width: 560px;">
+                <div class="row no-gutters">
+                  <div class="col-md-4">
+                    <img src="http://placehold.it/300x500" class="card-img" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">{{$location->name}}<small class="text-muted float-right"> {{$location->type->name}}</small></h5>
+                      
+                      <p class="card-text">{{$location->description}}</p>
+                      <p class="card-text"><small class="text-muted">{{$location->location}}</small></p>
+                      <a href="#" class="btn btn-custom mx-auto d-block">Info</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              @endforeach
             </div>
           </div>
         </div>
-        @endforeach
-    </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+       
+    
   </div>
 </div>
 
