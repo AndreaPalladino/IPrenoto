@@ -10994,6 +10994,14 @@ html {
   width: 500px;
 }
 
+.inputborder3 {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 2px solid var(--trenta);
+  width: 300px;
+}
+
 .contactForm {
   height: 400px;
   width: 600px;
@@ -11082,6 +11090,13 @@ html {
 }
 
 .cardPrenota {
-  height: 235px;
+  height: 255px;
+}
+
+.bookForm2 {
+  height: 20vh;
+  width: 600px;
+  background-color: rgba(128, 128, 128, 0.507);
+  transition: 0.5;
 }
 

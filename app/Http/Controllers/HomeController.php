@@ -63,7 +63,13 @@ class HomeController extends Controller
          $user = Auth::user();
          $locations = $user->locations()->get();
          $bookings = Booking::where('email', '=', $user->email)->orderBy('created_at', 'desc')->paginate(6);
+         $utenti = User::all();
+         $prenotazioni = Booking::all();
          
+            
+        
+         
+         /* dd($lista); */
 
          /* $booking = Booking::all();
          $utenti = User::all();
@@ -76,6 +82,6 @@ class HomeController extends Controller
          
          
 
-        return view('profile', compact('user','bookings','locations'));
+        return view('profile', compact('user','bookings','locations', 'prenotazioni'));
     }
 }

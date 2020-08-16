@@ -16,7 +16,11 @@
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <button id="contact" class="btn btn-custom  mr-3">Contattaci</button>
+                    @if(Route::currentRouteName() == 'homepage')
+                    <button id="contact" class="btn btn-custom  mr-3">Contattaci</button> 
+                    @else
+                     <a href="/" class="btn btn-custom mr-3">Contattaci</a>   
+                    @endif
                 </li>
                 <li class="nav-item">
                 <a href="{{route('manager.create')}}"><i class="fas fa-plus text10 fa-2x mr-3"></i></a>

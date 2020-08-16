@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Booking extends Model
 {
-    public function user(){
+    public function users(){
         return $this->belongsTo(User::class);
     }
 
@@ -19,5 +19,9 @@ class Booking extends Model
 
     public function location(){
         return $this->belongsTo(Location::class);
+    }
+
+    static public function ToBeRevisionedCount(){
+        return Booking::where('user_id', '=', auth()->user()->id)->count();
     }
 }
