@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\User;
 use App\Booking;
 use App\Location;
 use Illuminate\Http\Request;
@@ -54,5 +55,27 @@ class HomeController extends Controller
 
         
         return redirect('/')->with('booking.confirmation','confirm');
+    }
+
+
+    public function profile(){
+
+         $user = Auth::user();
+         $locations = $user->locations()->get();
+         $bookings = Booking::where('email', '=', $user->email)->orderBy('created_at', 'desc')->paginate(6);
+         
+
+         /* $booking = Booking::all();
+         $utenti = User::all();
+         $users = User::where('name','=', $utenti->bookings->name)->paginate(10); */
+         
+        
+         
+         /* $bookings_1 = Booking::where('user_id','=',$users->id)->get(); */
+       
+         
+         
+
+        return view('profile', compact('user','bookings','locations'));
     }
 }
