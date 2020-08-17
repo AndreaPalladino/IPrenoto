@@ -67,8 +67,9 @@
         </div>
          @foreach($locations as $location)
          <div class="col-12 bookForm2">
-         <h3 class="text-center my-3 text-white">{{$location->name}}</h3>
-         <button class="btn btn-custom mx-auto d-block" data-toggle="modal" data-target="#exampleModal">Vedi prenotazioni</button>
+           <h3 class="text-center text-white my-3">{{$location->name}}</h3>
+         <a class="btn btn-custom mx-auto d-block" href="{{route('manager.booking', [$location->name, $location->id])}}">Vedi prenotazioni</a>
+
          </div>
          @endforeach
      </div>

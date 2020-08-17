@@ -30,3 +30,4 @@ Route::get('/profile', 'HomeController@profile')->name('profile');
 /* MANAGER */
 Route::get('/manager/carica', 'ManagerController@create')->name('manager.create');
 Route::post('/manager/locationStore', 'ManagerController@storeLoc')->name('manager.store');
+Route::get('/manager/{name}/{id}/prenotazioni', 'ManagerController@prenotazioni')->name('manager.booking');

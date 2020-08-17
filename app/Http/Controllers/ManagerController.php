@@ -36,4 +36,12 @@ class ManagerController extends Controller
 
         return redirect()->back()->with('location.created','ok');
     }
+
+
+    public function prenotazioni($name, $location_id){
+        $location = Location::find($location_id);
+        $bookings = $location->bookings()->get();
+
+    return view('manager.prenotazioni', compact('location','bookings'));
+    }
 }
