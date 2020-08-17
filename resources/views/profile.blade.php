@@ -27,9 +27,21 @@
 </div>
 
 @endif
+@if (session('location.updated'))
+<div class="alert alert-success text-center">
+    <h5>Modifica avvenuta con successo</h5>
+</div>
+
+@endif
 @if (session('deleted.booking'))
 <div class="alert alert-warning text-center">
     <h5>Prenotazione cancellata</h5>
+</div>
+
+@endif
+@if (session('location.deleted'))
+<div class="alert alert-warning text-center">
+    <h5>Attività rimossa</h5>
 </div>
 
 @endif
@@ -110,9 +122,30 @@
               
               <td class="text-center text-dark">{{$location->name}}</td>
               <td><a class="btn btn-custom" href="{{route('manager.booking', [$location->name, $location->id])}}">Vedi prenotazioni</a></td>
-              <td><a class="btn btn-warning" href="">Modifica</a></td>
-              <td><a class="btn btn-danger" href="">Elimina attività</a></td>
+            <td><a class="btn btn-warning" href="{{route('manager.edit', compact('location'))}}">Modifica</a></td>
+              <td><a class="btn btn-danger" href="" data-toggle="modal" data-target="#exampleModal2">Elimina attività</a></td>
             </tr>
+            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel2">Sei sicuro di voler rimuovere l'attività?</h5>
+                    
+                  </div>
+                  <div class="modal-body">
+                  <form action="{{route('manager.delete', compact('location'))}}" method="POST">
+                    @method('DELETE')
+                    @csrf
+                    <button type="submit" class="btn btn-danger">Cancella</button>
+                  </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
             @endforeach
           </tbody>
         </table>
