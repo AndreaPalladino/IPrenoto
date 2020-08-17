@@ -63,25 +63,30 @@ class HomeController extends Controller
          $user = Auth::user();
          $locations = $user->locations()->get();
          $bookings = Booking::where('email', '=', $user->email)->orderBy('created_at', 'desc')->paginate(6);
-         $utenti = User::all();
-         $prenotazioni = Booking::all();
-         
-            
-        
-         
-         /* dd($lista); */
 
-         /* $booking = Booking::all();
-         $utenti = User::all();
-         $users = User::where('name','=', $utenti->bookings->name)->paginate(10); */
-         
-        
-         
-         /* $bookings_1 = Booking::where('user_id','=',$users->id)->get(); */
-       
-         
-         
+        return view('profile', compact('user','bookings','locations'));
+    }
 
-        return view('profile', compact('user','bookings','locations', 'prenotazioni'));
+    public function edit(Booking $booking){
+        return view('edit', compact('booking'));
+    }
+
+    public function update(Booking $booking, Request $request){
+        
+        $user = Auth::user();
+        $booking->name=$request->input('name');
+        $booking->email=$request->input('email');
+        $booking->location=$request->input('location');
+        $booking->number=$request->input('number');
+        $booking->user_id=$user->id;
+        $booking->update();
+
+        return redirect('profile')->with('updated.success','ok');
+    }
+
+    public function deleteBooking(Booking $booking){
+        $booking->delete();
+
+        return redirect('profile')->with('deleted.booking','ok');
     }
 }
