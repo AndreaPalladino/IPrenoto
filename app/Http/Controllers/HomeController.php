@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Type;
 use App\User;
 use App\Booking;
 use App\Location;
@@ -32,12 +33,13 @@ class HomeController extends Controller
     }
     public function prenota()
     {
+        $locations = Location::all();
         $locations_1 = Location::where('type_id','=','2')->paginate(8);
         $locations_2 = Location::where('type_id','=','1')->paginate(8);
         $locations_3 = Location::where('type_id','=','3')->paginate(8);
 
 
-        return view('prenota', compact('locations_1', 'locations_2', 'locations_3'));
+        return view('prenota', compact('locations','locations_1', 'locations_2', 'locations_3'));
     }
 
 
@@ -89,4 +91,10 @@ class HomeController extends Controller
 
         return redirect('profile')->with('deleted.booking','ok');
     }
+
+    public function show(Location $location){
+        return view('mostra', compact('location'));
+    }
+
+    
 }

@@ -19,6 +19,7 @@ Auth::routes();
 
 /* TUTTI */
 Route::get('/', 'PublicController@index')->name('homepage');
+Route::get('/elenco/{name}/{id}', 'PublicController@elencoAtt')->name('elenco');
 
 
 /* UTENTI LOGGATI */
@@ -29,6 +30,8 @@ Route::get('/profile', 'HomeController@profile')->name('profile');
 Route::get('/modifica/{booking}', 'HomeController@edit')->name('edit');
 Route::put('/modifica/{booking}/update', 'HomeController@update')->name('booking.update');
 Route::delete('/cancella/{booking}', 'HomeController@deleteBooking')->name('booking.delete');
+Route::get('/mostra/{location}', 'HomeController@show')->name('show');
+
 
 /* MANAGER */
 Route::get('/manager/carica', 'ManagerController@create')->name('manager.create');

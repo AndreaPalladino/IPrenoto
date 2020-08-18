@@ -31,7 +31,13 @@
                 </div>
                 <div class="form-group">
                   <label class="text-white" for="inputLocation">Nome del luogo</label>
-                  <input name="location" type="text" class="form-control" id="inputLocation" placeholder="Hotel Miramare">
+                  <select id="inputState" class="form-control">
+                    @foreach ($locations as $location)
+                    <option value="{{$location->id}}" {{old('type') == $location->id ? 'selected' : ''}}>{{$location->name}}
+                    </option>
+                        @endforeach
+                </select>
+                  {{-- <input name="location" type="text" class="form-control" id="inputLocation" placeholder="Hotel Miramare"> --}}
                 </div>
                 <div class="form-row">
                   <div class="form-group col-md-6">
@@ -79,7 +85,7 @@
                       
                       <p class="card-text">{{$location->description}}</p>
                       <p class="card-text"><small class="text-muted">{{$location->location}}</small></p>
-                      <a href="#" class="btn btn-custom mx-auto d-block">Info</a>
+                      <a href="{{route('show', compact('location'))}}" class="btn btn-custom mx-auto d-block">Info</a>
                     </div>
                   </div>
                 </div>

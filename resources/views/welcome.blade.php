@@ -65,13 +65,15 @@
 
 <div class="container-fluid mb-5 pb-3">
     <div class="row mt-5 pt-5">
+        @foreach($types as $type)
         <div class="col-12 arrow  d-flex justify-content-center align-itens-center flex-column my-2" data-aos="fade-right" data-aos-duration="3000">
-            <h3 class="text-center text-white ">Hotel</h3>
+            <h3 class="text-center text-white ">{{$type->name}}</h3>
         </div>
         <div class="col-12  d-flex justify-content-center align-itens-center flex-column my-2" data-aos="fade-left" data-aos-duration="3000">
-            <a href="" class="h3 arrow2 textHover text-center pt-4">Vai all'elenco</a>
+        <a href="{{route('elenco', [$type->name , $type->id])}}" class="h3 arrow2 textHover text-center pt-4">Vai all'elenco</a>
         </div>
-        <div class="col-12  arrow  d-flex justify-content-center align-itens-center flex-column my-2" data-aos="fade-right" data-aos-duration="3000">
+        @endforeach
+        {{-- <div class="col-12  arrow  d-flex justify-content-center align-itens-center flex-column my-2" data-aos="fade-right" data-aos-duration="3000">
             <h3 class="text-center text-white ">Ristoranti</h3>
         </div>
         <div class="col-12  d-flex justify-content-center align-itens-center flex-column my-2" data-aos="fade-left" data-aos-duration="3000">
@@ -82,7 +84,7 @@
         </div>
         <div class="col-12  d-flex justify-content-center align-itens-center flex-column my-2" data-aos="fade-left" data-aos-duration="3000">
            <a href="" class=" h3  textHover arrow2 text-center pt-4">Vai all'elenco</a>
-        </div>
+        </div> --}}
     </div>
 </div>
 
