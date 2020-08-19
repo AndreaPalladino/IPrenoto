@@ -31,9 +31,9 @@
                 </div>
                 <div class="form-group">
                   <label class="text-white" for="inputLocation">Nome del luogo</label>
-                  <select id="inputState" class="form-control">
+                  <select name="location" id="inputState" class="form-control">
                     @foreach ($locations as $location)
-                    <option value="{{$location->id}}" {{old('type') == $location->id ? 'selected' : ''}}>{{$location->name}}
+                    <option  value="{{$location->name}}" {{old('type') == $location->id ? 'selected' : ''}}>{{$location->name}}
                     </option>
                         @endforeach
                 </select>
@@ -77,9 +77,8 @@
               <div class="card border-custom mb-3 cardPrenota" style="max-width: 560px;">
                 <div class="row no-gutters">
                   <div class="col-md-4">
-                    @foreach($location->images as $image)
-                    <img src="{{Storage::url($image->file)}}" class="card-img" alt="...">
-                    @endforeach
+                    <img src="{{$location->images->first()->getUrl(300,150)}}" class="card-img" alt="...">
+                 
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
@@ -100,9 +99,9 @@
               <div class="card border-custom mb-3 cardPrenota" style="max-width: 560px;">
                 <div class="row no-gutters">
                   <div class="col-md-4">
-                    @foreach($location->images as $image)
-                    <img src="{{Storage::url($image->file)}}" class="card-img" alt="...">
-                    @endforeach
+                    
+                    <img src="{{$location->images->first()->getUrl(300,150)}}" class="card-img" alt="...">
+                 
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
@@ -110,7 +109,7 @@
                       
                       <p class="card-text">{{$location->description}}</p>
                       <p class="card-text"><small class="text-muted">{{$location->location}}</small></p>
-                      <a href="#" class="btn btn-custom mx-auto d-block">Info</a>
+                      <a href="{{route('show', compact('location'))}}" class="btn btn-custom mx-auto d-block">Info</a>
                     </div>
                   </div>
                 </div>
@@ -122,9 +121,8 @@
               <div class="card border-custom mb-3 cardPrenota" style="max-width: 560px;">
                 <div class="row no-gutters">
                   <div class="col-md-4">
-                    @foreach($location->images as $image)
-                    <img src="{{Storage::url($image->file)}}" class="card-img" alt="...">
-                    @endforeach
+                    <img src="{{$location->images->first()->getUrl(300,150)}}" class="card-img" alt="...">
+                 
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
@@ -132,7 +130,7 @@
                       
                       <p class="card-text">{{$location->description}}</p>
                       <p class="card-text"><small class="text-muted">{{$location->location}}</small></p>
-                      <a href="#" class="btn btn-custom mx-auto d-block">Info</a>
+                      <a href="{{route('show', compact('location'))}}" class="btn btn-custom mx-auto d-block">Info</a>
                     </div>
                   </div>
                 </div>
@@ -142,7 +140,7 @@
           </div>
         </div>
       </div>
-   <div class="col-12 col-md-6 position-sticky">
+   <div class="col-12 col-md-6 position-sticky frame">
     <div style="width: 700px;position: relative;"><iframe width="700" height="440" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=italy+(Titolo)&amp;ie=UTF8&amp;t=&amp;z=10&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><div style="position: absolute;width: 80%;bottom: 10px;left: 0;right: 0;margin-left: auto;margin-right: auto;color: #000;text-align: center;"><small style="line-height: 1.8;font-size: 2px;background: #fff;">Powered by <a href="http://www.googlemapsgenerator.com/it/">Googlemapsgenerator.com/it/</a> & <a href="https://iamsterdamcard.it/">iamsterdamcard it</a></small></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div><br />
    </div>
 

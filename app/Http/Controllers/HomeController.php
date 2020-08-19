@@ -49,9 +49,10 @@ class HomeController extends Controller
         $user = Auth::user();
         $b->name=$request->input('name');
         $b->email=$request->input('email');
-        $b->location=$request->input('location');
+        $b->location=$request->get('location');
         $b->number=$request->input('number');
         $b->user_id=$user->id;
+        
 
         $b->save();
 

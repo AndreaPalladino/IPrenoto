@@ -172,7 +172,23 @@
 
 <!-- Modal -->
 
+@push('script')
+<script>
+   
 
+
+document.addEventListener('scroll', ()=>{
+    let nav = document.querySelector('#nav')
+    if(window.scrollY > 20){
+        nav.classList.add("bg30")
+    }
+    else{
+        nav.classList.remove("bg30")
+    }
+    
+})
+</script>
+@endpush
 
 
 @endsection

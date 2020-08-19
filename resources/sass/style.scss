@@ -159,6 +159,31 @@ height: 81vh;
 background-color: var(--trenta);
 }
 
+@media screen and (max-width:550px){
+  .booking{
+    height: 90vh;
+    background-color: var(--trenta);
+    }
+  #nav{
+    background-color: black !important;
+  }
+  navbar-toggler-icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    content: "";
+    color: var(--dieci) !important;
+    background: no-repeat center center;
+    background-size: 100% 100%;
+}
+.contactForm{
+  display: none;
+}
+}
+
+
+
 .spazio{
   height: 5vh;
   background-color: var(--trenta);
@@ -190,8 +215,11 @@ background-color: var(--trenta);
 }
 
 .cardPrenota{
-  height:280px;
+  height:200px;
 }
+
+
+
 
 .bookForm2{
   height:20vh;
@@ -243,4 +271,17 @@ background-color: var(--trenta);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.frame{
+
+}
+
+@media screen and (max-width:550px){
+  .frame{
+    display: none !important;
+  }
+  .cardPrenota{
+    height: 340px;
+  }
 }

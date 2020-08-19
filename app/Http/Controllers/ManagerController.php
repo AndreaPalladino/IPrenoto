@@ -53,18 +53,24 @@ class ManagerController extends Controller
             $newFileName = "public/locations/{$l->id}/{$fileName}";
             Storage::move($image, $newFileName);
 
-           
+            dispatch(new ResizeImage(
+                $newFileName,
+                300,
+                150
+            )); 
+
+            dispatch(new ResizeImage(
+                $newFileName,
+                700,
+                300
+            )); 
 
             $i->file = $newFileName;
             $i->location_id = $l->id;
 
             $i->save();
 
-            /* dispatch(new ResizeImage(
-                $newFileName,
-                300,
-                150
-            )); */
+            
         }
 
         File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));
@@ -110,11 +116,11 @@ class ManagerController extends Controller
         $fileName = $request->file('file')->store("public/temp/{$uniqueSecret}");
 
         
-        /* dispatch(new ResizeImage(
+        dispatch(new ResizeImage(
             $fileName,
             120,
             120
-        ));  */
+        )); 
 
         session()->push("images.{$uniqueSecret}", $fileName);
 
@@ -152,7 +158,7 @@ class ManagerController extends Controller
         foreach ($images as $image) {
             $data[] = [
                 'id' => $image,
-                'src' =>Storage::getUrlByFilePath($image, 120, 120)
+                'src' =>LocationImage::getUrlByFilePath($image, 120, 120)
             ];
         }
 

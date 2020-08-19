@@ -12,7 +12,7 @@ class LocationImage extends Model
         return $this->belongsTo(Location::class);
     }
 
-    /* static public function getUrlByFilePath($filePath, $w = null, $h = null){
+    static public function getUrlByFilePath($filePath, $w = null, $h = null){
 
         if(!$w && !$h) {
           return Storage::url($filePath);
@@ -29,5 +29,5 @@ class LocationImage extends Model
       public function getUrl($w = null, $h = null)
       {
         return LocationImage::getUrlByFilePath($this->file, $w,$h);
-      } */
+      } 
 }

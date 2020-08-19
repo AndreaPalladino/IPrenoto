@@ -23,9 +23,24 @@
     <div class="row">
 
         <div class="col-md-8">
-          @foreach ($location->images as $image)
-          <img class="img-fluid" src="{{Storage::url($image->file)}}" alt="">
-          @endforeach
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              @foreach($location->images as $key=>$image)
+              <div class="carousel-item {{$key == 0 ? 'active' : '' }}">
+              <img src="{{$image->getUrl(700,300)}}" class="d-block w-100">
+              </div>
+              @endforeach
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon margin-custom" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+                 
           
         </div>
     
@@ -42,7 +57,7 @@
       </div>
       @if(Auth::user()->is_manager && $location->user_id == Auth::user()->id)
       <a class="btn btn-warning mt-3 px-5" href="{{route('manager.edit', compact('location'))}}">Modifica</a>
-      <a class="btn btn-danger float-right mt-3 px-4" href="">Elimina attività</a>
+      <a class="btn btn-danger float-md-right mt-3 px-4" href="">Elimina attività</a>
       @endif
 </div>
 

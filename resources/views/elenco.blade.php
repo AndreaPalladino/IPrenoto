@@ -20,7 +20,7 @@
         @foreach($locations as $location)
         <div class="col-md-7 my-3">
           <a href="#">
-            <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt="">
+            <img class="img-fluid rounded mb-3 mb-md-0" src="{{$location->images->first()->getUrl(700,300)}}" alt="">
           </a>
         </div>
         <div class="col-md-5 my-3">
