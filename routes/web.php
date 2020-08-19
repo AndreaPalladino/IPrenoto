@@ -40,3 +40,6 @@ Route::get('/manager/{name}/{id}/prenotazioni', 'ManagerController@prenotazioni'
 Route::get('/manager/{location}/edit', 'ManagerController@locEdit')->name('manager.edit');
 Route::put('/manager/{location}/update', 'ManagerController@locUpdate')->name('manager.update');
 Route::delete('/manager/{location}/delete', 'ManagerController@locDelete')->name('manager.delete');
+Route::post('/location/images/upload', 'ManagerController@uploadImage')->name('location.images.upload');
+Route::delete('/location/images/remove', 'ManagerController@removeImage')->name('location.images.remove');
+Route::get('/location/images', 'ManagerController@getImages')->name('location.images');

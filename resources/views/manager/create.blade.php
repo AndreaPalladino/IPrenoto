@@ -14,10 +14,11 @@
       <div class="row justify-content-center align-items-center">
         <div class="col-sm-9 col-md-7 col-lg-9 my-5 py-5">
           <div class="card card-signin my-5">
-            <div class="card-body">
+            <div class="card-body altezza">
               <h3 class="card-title text-center">Registra la tua attività</h3>
             <form class="py-3 px-5 my-5" method="POST" action="{{route('manager.store')}}">
                 @csrf
+                <input type="hidden" name="uniqueSecret" value="{{$uniqueSecret}}">
                 <div class="form-group">
                     <label class="text-dark" for="inputState">Tipologia</label>
                     <select id="inputState" class="form-control border-custom" name="type">
@@ -38,7 +39,13 @@
                 <div class="form-group my-5">
                     <label for="exampleInputPassword1">Descrizione</label>
                     <textarea name="description" type="password" class="form-control border-custom" id="exampleInputPassword2"></textarea>
-                  </div>
+                </div>
+                <div class="form-group my-5">
+                  <label for="images">Immagini</label>
+                
+                    <div class="dropzone" id="drophere"></div>
+              
+                </div>
                 <button type="submit" class="btn btn-custom d-block mx-auto">Registra</button>
               </form>
             </div>

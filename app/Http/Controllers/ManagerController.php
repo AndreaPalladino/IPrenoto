@@ -4,8 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Type;
 use App\Location;
+use App\LocationImage;
+use App\Jobs\ResizeImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class ManagerController extends Controller
 {
@@ -13,9 +17,11 @@ class ManagerController extends Controller
         $this->middleware('manager');
     }
 
-    public function create(){
+    public function create(Request $request){
 
-        return view('manager.create');
+        $uniqueSecret = $request->old('uniqueSecret' , base_convert(sha1(uniqid(mt_rand())), 16, 36));
+
+        return view('manager.create', compact('uniqueSecret'));
     }
 
     public function storeLoc(Request $request){
@@ -32,6 +38,36 @@ class ManagerController extends Controller
 
         $l->save();
 
+        $uniqueSecret = $request->input('uniqueSecret');
+
+        $images = session()->get("images.{$uniqueSecret}", []);
+        $removedImages = session()->get("removedimages.{$uniqueSecret}",[]);
+
+        $images = array_diff($images, $removedImages);
+
+
+        foreach ($images as $image) {
+            $i = new LocationImage();
+
+            $fileName = basename($image);
+            $newFileName = "public/locations/{$l->id}/{$fileName}";
+            Storage::move($image, $newFileName);
+
+           
+
+            $i->file = $newFileName;
+            $i->location_id = $l->id;
+
+            $i->save();
+
+            /* dispatch(new ResizeImage(
+                $newFileName,
+                300,
+                150
+            )); */
+        }
+
+        File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));
 
 
         return redirect()->back()->with('location.created','ok');
@@ -66,4 +102,61 @@ class ManagerController extends Controller
         $location->delete();
         return redirect('profile')->with('location.deleted','ok');
     }
+
+    public function uploadImage(Request $request){
+
+
+        $uniqueSecret = $request->input('uniqueSecret');
+        $fileName = $request->file('file')->store("public/temp/{$uniqueSecret}");
+
+        
+        /* dispatch(new ResizeImage(
+            $fileName,
+            120,
+            120
+        ));  */
+
+        session()->push("images.{$uniqueSecret}", $fileName);
+
+        return response()->json(
+            [
+                'id'=>$fileName
+            ]
+           );
+
+    }
+
+    public function removeImage(Request $request){
+
+        $uniqueSecret = $request->input('uniqueSecret');
+
+        $fileName = $request->input('id');
+
+        session()->push("removedimages.{$uniqueSecret}", $fileName);
+
+        Storage::delete($fileName);
+
+        return response()->json('ok');
+    }
+
+    public function getImages(Request $request){
+        $uniqueSecret = $request->input('uniqueSecret');
+
+        $images = session()->get("images.{$uniqueSecret}",[]);
+        $removedImages = session()->get("removedimages.{$uniqueSecret}", []);
+
+        $images = array_diff($images, $removedImages);
+        
+        $data = [];
+
+        foreach ($images as $image) {
+            $data[] = [
+                'id' => $image,
+                'src' =>Storage::getUrlByFilePath($image, 120, 120)
+            ];
+        }
+
+        return response()->json($data);
+    }
+
 }

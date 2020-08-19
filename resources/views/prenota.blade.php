@@ -77,7 +77,9 @@
               <div class="card border-custom mb-3 cardPrenota" style="max-width: 560px;">
                 <div class="row no-gutters">
                   <div class="col-md-4">
-                    <img src="http://placehold.it/300x500" class="card-img" alt="...">
+                    @foreach($location->images as $image)
+                    <img src="{{Storage::url($image->file)}}" class="card-img" alt="...">
+                    @endforeach
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
@@ -98,7 +100,9 @@
               <div class="card border-custom mb-3 cardPrenota" style="max-width: 560px;">
                 <div class="row no-gutters">
                   <div class="col-md-4">
-                    <img src="http://placehold.it/300x500" class="card-img" alt="...">
+                    @foreach($location->images as $image)
+                    <img src="{{Storage::url($image->file)}}" class="card-img" alt="...">
+                    @endforeach
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
@@ -118,7 +122,9 @@
               <div class="card border-custom mb-3 cardPrenota" style="max-width: 560px;">
                 <div class="row no-gutters">
                   <div class="col-md-4">
-                    <img src="http://placehold.it/300x500" class="card-img" alt="...">
+                    @foreach($location->images as $image)
+                    <img src="{{Storage::url($image->file)}}" class="card-img" alt="...">
+                    @endforeach
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
