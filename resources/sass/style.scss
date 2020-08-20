@@ -37,6 +37,19 @@ html{
     background-color: rgba(27, 42, 75, 0.411);
   }
 
+  @media screen and (max-width:550px){
+    .over{
+      height: 200px;
+      width: 70px;
+      top: -5px;
+      margin-bottom: 10px !important;
+      position: relative;
+      overflow-y: visible;
+      background-color: var(--trenta);
+    }
+  
+  }
+
   .arrow{
     height: 80px;
     background:linear-gradient(90deg,var(--trenta) 45%, white);
@@ -69,6 +82,14 @@ html{
   .foot{
     height: 60vh;
     background-color: var(--trenta);
+  }
+
+  @media screen and (max-width:550px){
+    .foot{
+      height: 70vh;
+      background-color: var(--trenta);
+    }
+    
   }
 
   .inputborder{
@@ -179,6 +200,14 @@ background-color: var(--trenta);
 }
 .contactForm{
   display: none;
+}
+
+.mobile{
+  height:90vh;
+  background-image: url('/media/mobile.jpeg');
+  background-position: 0px -100px;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 }
 

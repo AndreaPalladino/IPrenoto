@@ -15,7 +15,7 @@ class AddLocationIdToBookings extends Migration
     {
         Schema::table('bookings', function (Blueprint $table) {
             $table->unsignedBigInteger('location_id')->default(1);
-            $table->foreign('location_id')->references('id')->on('locations');
+            $table->foreign('location_id')->references('id')->on('locations')->onDelete('cascade');
         });
     }
 
